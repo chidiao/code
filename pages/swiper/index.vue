@@ -7,12 +7,20 @@
 
     <section class="max-w-screen-md mx-auto">
       <div class="text-xl/[3em] font-bold">导航</div>
-      <SwiperNavigation />
+
+      <div class="grid gap-5 grid-cols-1 lg:grid-cols-2">
+        <SwiperNavigationDefault />
+        <SwiperNavigationCustom />
+      </div>
     </section>
 
     <section class="max-w-screen-md mx-auto">
       <div class="text-xl/[3em] font-bold">页码</div>
-      <SwiperPagination />
+
+      <div class="grid gap-5 grid-cols-1 lg:grid-cols-2">
+        <SwiperPaginationDefault />
+        <SwiperPaginationCustom />
+      </div>
     </section>
   </div>
 </template>
