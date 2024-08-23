@@ -1,3 +1,5 @@
 <template>
-  <div></div>
+  <div class="container mx-auto">
+    <div>gsap</div>
+  </div>
 </template>

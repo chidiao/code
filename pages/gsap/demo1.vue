@@ -23,6 +23,10 @@
 </template>
 
 <script setup>
+definePageMeta({
+  layout: 'empty'
+})
+
 import { gsap } from 'gsap'
 
 const el = ref()
