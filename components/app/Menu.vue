@@ -11,6 +11,20 @@
 <script setup lang="ts">
 import avatar from '@/assets/img/me.jpg'
 
+const ui = {
+  base: 'gap-3',
+  size: 'text-xs',
+  padding: 'px-4 py-3',
+  inactive: 'text-zinc-300 my-3',
+  icon: {
+    base: 'size-4',
+    inactive: 'text-zinc-300'
+  },
+  avatar: {
+    size: 'xs'
+  }
+}
+
 const links = [
   {
     label: 'MyCode',
@@ -31,6 +45,11 @@ const links = [
     to: '/ui'
   },
   {
+    label: 'Demo',
+    icon: 'i-heroicons-camera',
+    to: '/demo'
+  },
+  {
     label: 'Swiper',
     icon: 'i-heroicons-code-bracket-square',
     to: '/swiper'
@@ -46,18 +65,4 @@ const links = [
     to: '/play'
   }
 ]
-
-const ui = {
-  base: 'gap-3',
-  size: 'text-xs',
-  padding: 'px-4 py-3',
-  inactive: 'text-zinc-300 my-3',
-  icon: {
-    base: 'size-4',
-    inactive: 'text-zinc-300'
-  },
-  avatar: {
-    size: 'xs'
-  }
-}
 </script>
