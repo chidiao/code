@@ -8,5 +8,6 @@ export default defineNuxtConfig({
   modules: ['@nuxt/ui', 'nuxt-swiper'],
   colorMode: {
     preference: 'light'
-  }
+  },
+  compatibilityDate: '2024-09-30'
 })
