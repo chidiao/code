@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { githubUrl } from '~/config/site'
 
-defineProps<{ title?: string; url?: string; open?: string; github?: string }>()
+defineProps<{ url?: string; open?: string; github?: string }>()
 </script>
 
 <template>
@@ -16,7 +16,7 @@ defineProps<{ title?: string; url?: string; open?: string; github?: string }>()
         <svg class="h-3.5 w-3.5 shrink-0 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm0 0c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3 7.5 7.03 7.5 12 9.515 21 12 21Zm0 0h9" />
         </svg>
-        <span class="truncate text-xs text-slate-400">{{ title ?? url ?? '' }}</span>
+        <span class="truncate text-xs text-slate-400">{{ url ?? 'localhost' }}</span>
       </div>
       <a
         v-if="github"
@@ -37,7 +37,7 @@ defineProps<{ title?: string; url?: string; open?: string; github?: string }>()
         target="_blank"
         rel="noopener"
         title="在新窗口打开"
-        :aria-label="`打开 ${title ?? ''}`"
+        :aria-label="`在新窗口打开 ${url ?? ''}`"
         class="grid h-6 w-6 shrink-0 place-items-center rounded-md text-slate-400 transition-colors hover:bg-slate-800 hover:text-slate-100"
       >
         <span class="i-lucide-external-link text-sm" />

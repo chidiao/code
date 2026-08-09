@@ -121,4 +121,28 @@ export const cards: Card[] = [
       </svg>`,
     },
   },
+  {
+    title: 'Picsum 占位图',
+    to: '/pages/picsum',
+    tag: '页面 · 案例',
+    desc: 'Lorem Picsum 接口随机拉图，Grid 点击复制 URL',
+    thumb: {
+      mode: 'iframe',
+      src: '/preview/picsum',
+      aspect: 'aspect-[16/9]',
+      zoom: 2.2,
+    },
+  },
+  {
+    title: 'Picsum 平铺',
+    to: '/pages/picsum',
+    tag: '页面 · 案例',
+    desc: '同款 Hook 的平铺 UI：无间距无圆角，点图复制 URL',
+    thumb: {
+      mode: 'iframe',
+      src: '/preview/picsum-tiles',
+      aspect: 'aspect-[16/9]',
+      zoom: 2.2,
+    },
+  },
 ]

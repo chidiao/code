@@ -54,6 +54,7 @@ export const nav: MenuSection[] = [
         group: '案例',
         items: [
           { title: 'Swiper 滑动', to: '/pages/swiper' },
+          { title: 'Picsum 占位图', to: '/pages/picsum' },
         ],
       },
     ],

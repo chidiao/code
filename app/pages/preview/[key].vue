@@ -5,7 +5,7 @@ definePageMeta({ layout: 'bare' })
 
 const route = useRoute()
 
-const FULL_PAGE_KEYS = ['login', 'scratch-card', 'code-rain', 'swiper']
+const FULL_PAGE_KEYS = ['login', 'scratch-card', 'code-rain', 'swiper', 'picsum', 'picsum-tiles']
 
 const previewMap: Record<string, Component> = {
   'copy-button': defineAsyncComponent(() => import('~~/cases/components/copy-button/index.vue')),
@@ -14,6 +14,8 @@ const previewMap: Record<string, Component> = {
   'scratch-card': defineAsyncComponent(() => import('~~/cases/pages/scratch-card/index.vue')),
   'code-rain': defineAsyncComponent(() => import('~~/cases/pages/code-rain/index.vue')),
   swiper: defineAsyncComponent(() => import('~~/cases/pages/swiper/index.vue')),
+  picsum: defineAsyncComponent(() => import('~~/cases/pages/picsum/grid.vue')),
+  'picsum-tiles': defineAsyncComponent(() => import('~~/cases/pages/picsum/tiles.vue')),
 }
 
 const key = computed(() => String(route.params.key ?? ''))

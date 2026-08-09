@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import ScratchCard from '~~/cases/components/scratch-card/index.vue'
+import ScratchCard from './scratch-card.vue'
 </script>
 
 <template>
