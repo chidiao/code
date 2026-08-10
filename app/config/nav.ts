@@ -26,13 +26,19 @@ export const nav: MenuSection[] = [
       {
         group: '反馈',
         items: [
-          { title: '复制按钮', to: '/components/copy-button' },
+          { title: '渐变按钮', to: '/components/mybtn' },
         ],
       },
       {
         group: '选择',
         items: [
           { title: '分段选择器', to: '/components/segmented-control' },
+        ],
+      },
+      {
+        group: '装饰',
+        items: [
+          { title: '光泽泡泡', to: '/components/bubble' },
         ],
       },
     ],
@@ -55,6 +61,19 @@ export const nav: MenuSection[] = [
         items: [
           { title: 'Swiper 滑动', to: '/pages/swiper' },
           { title: 'Picsum 占位图', to: '/pages/picsum' },
+        ],
+      },
+    ],
+  },
+  {
+    key: 'templates',
+    title: '模板',
+    icon: 'i-lucide-layout-template',
+    groups: [
+      {
+        group: '区块',
+        items: [
+          { title: '定价方案', to: '/templates/pricing' },
         ],
       },
     ],

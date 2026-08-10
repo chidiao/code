@@ -25,12 +25,21 @@ const roles = ['小时', '日', '周', '月']
       </div>
     </ShowcasePreview>
 
+    <ShowcaseCode file="components/segmented-control/index.vue" label="完整源码" />
+
     <ShowcasePreview title="禁用态">
       <div class="p-6">
         <SegmentedControl v-model="granularity" :options="roles" disabled />
       </div>
     </ShowcasePreview>
 
-    <ShowcaseCode file="components/segmented-control/index.vue" />
+    <section class="card px-4 py-3 text-sm leading-relaxed text-slate-400">
+      <p class="mb-1 font-medium text-slate-200">禁用说明</p>
+      <p>
+        设置
+        <code class="rounded bg-slate-800 px-1.5 py-0.5 text-xs text-slate-300">disabled</code>
+        后所有选项不可点击，样式自动降为半透明，用于表单提交中等场景。
+      </p>
+    </section>
   </ShowcasePage>
 </template>

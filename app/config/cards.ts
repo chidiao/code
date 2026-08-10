@@ -1,4 +1,4 @@
-/** 首页宫格卡片配置（与实际页面对应，含描述与缩略图） */
+﻿/** 首页宫格卡片配置（与实际页面对应，含描述与缩略图） */
 
 export interface CardThumb {
   mode?: 'iframe' | 'image' | 'svg'
@@ -24,19 +24,25 @@ export interface Card {
 
 export const cards: Card[] = [
   {
-    title: '复制按钮',
-    to: '/components/copy-button',
+    title: '渐变按钮',
+    to: '/components/mybtn',
     tag: '组件 · 反馈',
-    desc: 'Clipboard 一键复制按钮，三种形态三种尺寸',
+    desc: '渐变描边圆角按钮，props 驱动风格尺寸，复制逻辑 useCopy 解耦',
     thumb: {
       mode: 'svg',
       aspect: 'aspect-[16/9]',
       svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180">
         <rect width="320" height="180" fill="#020617"/>
-        <rect x="96" y="74" width="128" height="38" rx="10" fill="#0ea5e9"/>
-        <rect x="138" y="84" width="14" height="14" rx="2.5" stroke="#fff" stroke-width="1.8" fill="none"/>
-        <rect x="144" y="90" width="14" height="14" rx="2.5" fill="#fff"/>
-        <text x="166" y="99" fill="#fff" font-family="sans-serif" font-size="10" font-weight="600" text-anchor="middle">复制</text>
+        <defs>
+          <linearGradient id="mg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#38bdf8"/>
+            <stop offset="1" stop-color="#c084fc"/>
+          </linearGradient>
+        </defs>
+        <rect x="82" y="68" width="156" height="44" rx="22" fill="#0f172a" stroke="url(#mg)" stroke-width="2"/>
+        <rect x="108" y="80" width="13" height="13" rx="3" stroke="#e2e8f0" stroke-width="1.5" fill="none"/>
+        <rect x="113" y="85" width="13" height="13" rx="3" fill="#e2e8f0"/>
+        <text x="148" y="96" fill="#f1f5f9" font-family="sans-serif" font-size="11" text-anchor="middle">复制</text>
       </svg>`,
     },
   },
@@ -59,13 +65,51 @@ export const cards: Card[] = [
     },
   },
   {
+    title: '光泽泡泡',
+    to: '/components/bubble',
+    tag: '组件 · 装饰',
+    desc: '纯 CSS 光泽球体：inset 阴影 + 伪元素高光，颜色尺寸可配',
+    thumb: {
+      mode: 'svg',
+      aspect: 'aspect-[16/9]',
+      svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180">
+        <rect width="320" height="180" fill="#0b1120"/>
+        <defs>
+          <radialGradient id="b0" cx=".35" cy=".3" r=".9"><stop offset=".2" stop-color="#cfe0ff"/><stop offset="1" stop-color="#5f85c9"/></radialGradient>
+          <radialGradient id="b1" cx=".35" cy=".3" r=".9"><stop offset=".2" stop-color="#ffeab0"/><stop offset="1" stop-color="#c2ab62"/></radialGradient>
+          <radialGradient id="b2" cx=".35" cy=".3" r=".9"><stop offset=".2" stop-color="#c9a3ff"/><stop offset="1" stop-color="#6c1fb5"/></radialGradient>
+          <radialGradient id="b3" cx=".35" cy=".3" r=".9"><stop offset=".2" stop-color="#ff8e9c"/><stop offset="1" stop-color="#940115"/></radialGradient>
+          <radialGradient id="b4" cx=".35" cy=".3" r=".9"><stop offset=".2" stop-color="#fffb9e"/><stop offset="1" stop-color="#c0b214"/></radialGradient>
+          <radialGradient id="b5" cx=".35" cy=".3" r=".9"><stop offset=".2" stop-color="#c3ffef"/><stop offset="1" stop-color="#2f9c82"/></radialGradient>
+          <radialGradient id="b6" cx=".35" cy=".3" r=".9"><stop offset=".2" stop-color="#b9bec9"/><stop offset="1" stop-color="#2f3138"/></radialGradient>
+        </defs>
+        <g fill="none" stroke="#bfe9ff" stroke-opacity=".55" stroke-width="2.4" stroke-linecap="round" transform="rotate(-45)">
+          <ellipse cx="47" cy="70" rx="8" ry="4.2"/>
+          <ellipse cx="88" cy="70" rx="8" ry="4.2"/>
+          <ellipse cx="130" cy="70" rx="8" ry="4.2"/>
+          <ellipse cx="172" cy="70" rx="8" ry="4.2"/>
+          <ellipse cx="214" cy="70" rx="8" ry="4.2"/>
+          <ellipse cx="256" cy="70" rx="8" ry="4.2"/>
+          <ellipse cx="298" cy="70" rx="8" ry="4.2"/>
+        </g>
+        <circle cx="47" cy="90" r="22" fill="url(#b0)"/>
+        <circle cx="88" cy="90" r="22" fill="url(#b1)"/>
+        <circle cx="130" cy="90" r="22" fill="url(#b2)"/>
+        <circle cx="172" cy="90" r="22" fill="url(#b3)"/>
+        <circle cx="214" cy="90" r="22" fill="url(#b4)"/>
+        <circle cx="256" cy="90" r="22" fill="url(#b5)"/>
+        <circle cx="298" cy="90" r="22" fill="url(#b6)"/>
+      </svg>`,
+    },
+  },
+  {
     title: '登录页',
     to: '/pages/login',
     tag: '页面 · 整页',
     desc: '深色渐变背景 + 毛玻璃登录卡片',
     thumb: {
       mode: 'iframe',
-      src: '/preview/login',
+      src: '/preview/login?thumb=1',
       aspect: 'aspect-[16/9]',
       zoom: 2.2,
     },
@@ -76,10 +120,9 @@ export const cards: Card[] = [
     tag: '页面 · 整页',
     desc: 'Canvas 刮涂层抽奖整页 Demo',
     thumb: {
-      mode: 'iframe',
-      src: '/preview/scratch-card',
+      mode: 'image',
+      src: '/thumbs/pages/scratch-card.webp',
       aspect: 'aspect-[16/9]',
-      zoom: 2.2,
     },
   },
   {
@@ -89,7 +132,7 @@ export const cards: Card[] = [
     desc: 'Canvas 字符雨整页 Demo',
     thumb: {
       mode: 'iframe',
-      src: '/preview/code-rain',
+      src: '/preview/code-rain?thumb=1',
       aspect: 'aspect-[16/9]',
       zoom: 2.2,
     },
@@ -128,7 +171,7 @@ export const cards: Card[] = [
     desc: 'Lorem Picsum 接口随机拉图，Grid 点击复制 URL',
     thumb: {
       mode: 'iframe',
-      src: '/preview/picsum',
+      src: '/preview/picsum?thumb=1',
       aspect: 'aspect-[16/9]',
       zoom: 2.2,
     },
@@ -140,9 +183,21 @@ export const cards: Card[] = [
     desc: '同款 Hook 的平铺 UI：无间距无圆角，点图复制 URL',
     thumb: {
       mode: 'iframe',
-      src: '/preview/picsum-tiles',
+      src: '/preview/picsum-tiles?thumb=1',
       aspect: 'aspect-[16/9]',
       zoom: 2.2,
+    },
+  },
+  {
+    title: '定价方案',
+    to: '/templates/pricing',
+    tag: '模板 · 区块',
+    desc: '纯 Tailwind 三列定价区块，中间高亮「最受欢迎」',
+    thumb: {
+      mode: 'iframe',
+      src: '/preview/pricing?thumb=1',
+      aspect: 'aspect-[16/9]',
+      zoom: 1.4,
     },
   },
 ]

@@ -6,6 +6,7 @@ const route = useRoute()
 const active = computed(() => {
   if (route.path.startsWith('/pages')) return 'pages'
   if (route.path.startsWith('/components')) return 'components'
+  if (route.path.startsWith('/templates')) return 'templates'
   return ''
 })
 

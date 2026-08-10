@@ -1,0 +1,33 @@
+/* 泡泡舞台：承载容器，配色与间距通过 CSS 变量传入 */
+.bubble-stage {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--bubble-gap, 28px);
+  padding: 48px;
+  background: linear-gradient(135deg, #0f172a 0%, #020617 55%, #1e293b 100%);
+}
+
+/* 泡泡本体：透明圆 + inset 投影，光线从边缘向内晕开，模拟玻璃球 */
+.bubble {
+  position: relative;
+  width: var(--bubble-size, 160px);
+  height: var(--bubble-size, 160px);
+  border-radius: 9999px;
+  box-shadow: inset 0 0 40px var(--bubble-color, #86b0ed);
+}
+
+/* 高光伪元素：content 必须显式声明，否则 ::before 不渲染；
+   比例参考 160px 泡泡的 30×14px，即宽 18.75%、高 8.75%，随 --bubble-size 等比缩放 */
+.bubble::before {
+  content: '';
+  position: absolute;
+  top: 18%;
+  left: 18%;
+  width: calc(var(--bubble-size, 160px) * 0.1875);
+  height: calc(var(--bubble-size, 160px) * 0.0875);
+  border-radius: 50%;
+  background: rgba(191, 255, 255, 0.6);
+  transform: rotate(-45deg);
+}
